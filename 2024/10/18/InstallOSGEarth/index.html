@@ -86,10 +86,18 @@
 <meta property="og:site_name" content="Zhang&#39;s Blog">
 <meta property="og:description" content="OSGEarth的安装根据能查到的博客及相关教程，分两大类方法。  CMake 编译方法 vcpkg 安装方法  笔者在使用CMake编译方法遇到了大量的问题，使用VS编译时因为第三方库的问题，始终未能成功实现编译。在花费大量的时间后，转头使用vcpkg方法完成OSGEarth及其依赖项的安装。故在此进行记录安装过程，方便后续使用。 1. 安装vcpkg首先，下载vcpkg并执行 bootstra">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/images/Install1.png">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/images/Install2.png">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/images/Install3.png">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/images/Install4.png">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/images/Install5.png">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/images/Install6.png">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/images/Install7.png">
 <meta property="article:published_time" content="2024-10-18T05:40:41.000Z">
-<meta property="article:modified_time" content="2024-10-18T12:19:26.944Z">
+<meta property="article:modified_time" content="2024-10-18T13:00:08.494Z">
 <meta property="article:author" content="Zhang Shuaizhang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zhangshuaizhang.github.io/images/Install1.png">
 
 
 
@@ -363,7 +371,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  908
+                  838
                 </span>
               
 
@@ -411,9 +419,9 @@
 
 <p>即可完成安装，是的，只要这一行指令就可以完成安装，相比之下，CMake简直是让人吐血。vcpkg 安装OSGEarth时，会自动安装OSGEarth所需的各种依赖项。</p>
 <h2 id="3-安装过程中的问题"><a href="#3-安装过程中的问题" class="headerlink" title="3.安装过程中的问题"></a>3.安装过程中的问题</h2><p>安装依赖项时，vcpkg会先查看downloads目录，没有的话会从Github上下载包。</p>
-<p>![路径](..&#x2F;images&#x2F;Install1.png #pic_center &#x3D;600x)</p>
+<p><img src="/../images/Install1.png" alt="t"></p>
 <p>在从Github上下载时会面临连接不上或者下载失败等情况，这种情况下，可以找到手动点击下载链接，将下好的包命名为目标名称。举个例子：</p>
-<p>![路径](..&#x2F;images&#x2F;Install2.png #pic_center &#x3D;600x)</p>
+<p><img src="/../images/Install2.png" alt="t"></p>
 <p>点击图中链接，保存到vcpkg下的download目录，命名为win_flex_bison-2.5.25.zip，我手动下了好几个包，一般目标名称会多一些前缀。有一些比较大的包，下载时间会比较久，要是等不及的话，也可以手动下载，不过需要重新开始指令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcpkg install osgearth:x64-windows</span><br></pre></td></tr></table></figure>
 
@@ -422,13 +430,18 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vcpkg integrate install</span><br></pre></td></tr></table></figure>
 
 <p>将vcpkg中安装的bin加入到环境变量中：</p>
-<p> ![路径](..&#x2F;images&#x2F;Install3.png #pic_center &#x3D;600x)</p>
+<p><img src="/../images/Install3.png" alt="t"></p>
 <h2 id="5-测试用例"><a href="#5-测试用例" class="headerlink" title="5.测试用例"></a>5.测试用例</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">#<span class="keyword">include</span> <span class="string">&lt;osgEarth/MapNode&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;osgEarth/TMS&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;osgEarth/EarthManipulator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;osg/ArgumentParser&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;osgViewer/Viewer&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    osgEarth::<span class="built_in">initialize</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function">osg::ArgumentParser <span class="title">args</span><span class="params">(&amp;argc, argv)</span></span>;</span><br><span class="line">    <span class="function">osgViewer::Viewer <span class="title">viewer</span><span class="params">(args)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> imagery = <span class="keyword">new</span> osgEarth::<span class="built_in">TMSImageLayer</span>();</span><br><span class="line">    imagery-&gt;<span class="built_in">setURL</span>(<span class="string">&quot;https://readymap.org/readymap/tiles/1.0.0/7/&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> mapNode = <span class="keyword">new</span> osgEarth::<span class="built_in">MapNode</span>();</span><br><span class="line">    mapNode-&gt;<span class="built_in">getMap</span>()-&gt;<span class="built_in">addLayer</span>(imagery);</span><br><span class="line"></span><br><span class="line">    viewer.<span class="built_in">setSceneData</span>(mapNode);</span><br><span class="line">    viewer.<span class="built_in">setCameraManipulator</span>(<span class="keyword">new</span> osgEarth::<span class="built_in">EarthManipulator</span>(args));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> viewer.<span class="built_in">run</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>由于gl.h的问题，需要加入预处理器WIN32<br> ![路径](..&#x2F;images&#x2F;Install4.png #pic_center &#x3D;600x)</p>
-<p> 发现出现了以下的问题：<br>  ![路径](..&#x2F;images&#x2F;Install5.png #pic_center &#x3D;600x)<br>这是由于一些动态链接库并没有被导入bin中</p>
-<p>将下列所有的dll文件移动到你的工程文件所对应的release目录中，注意如果使用debug进行调试,需要将vcpkg中debug目录下的dll和pdb文件移动到对应debug目录中。<br>![路径](..&#x2F;images&#x2F;Install6.png #pic_center &#x3D;600x)</p>
-<p>最后成功运行：<br>![路径](..&#x2F;images&#x2F;Install7.png #pic_center &#x3D;600x)</p>
+<p>由于gl.h的问题，需要加入预处理器WIN32</p>
+<p><img src="/../images/Install4.png" alt="t"></p>
+<p> 发现出现了以下的问题：</p>
+<p><img src="/../images/Install5.png" alt="t"></p>
+<p>这是由于一些动态链接库并没有被导入bin中</p>
+<p>将下列所有的dll文件移动到你的工程文件所对应的release目录中，注意如果使用debug进行调试,需要将vcpkg中debug目录下的dll和pdb文件移动到对应debug目录中。</p>
+<p><img src="/../images/Install6.png" alt="t"></p>
+<p>最后成功运行：</p>
+<p><img src="/../images/Install7.png" alt="t"></p>
 <p>完结散花，欧耶！</p>
 <h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h2><p>建议使用vcpkg一步到位，CMake太折磨人了，对我来说。。。。我花了很久的时间，完成最终的安装，有点儿吐血。</p>
 <p>后续有必要的话，可以下载OSGEarth源码进行学习。</p>

@@ -3,7 +3,7 @@
   <entry>
     <title>Vcpkg 安装 OSGEarth</title>
     <url>/2024/10/18/InstallOSGEarth/</url>
-    <content><![CDATA[<h1 id="OSGEarth的安装"><a href="#OSGEarth的安装" class="headerlink" title="OSGEarth的安装"></a>OSGEarth的安装</h1><p>根据能查到的博客及相关教程，分两大类方法。</p>
+    <content><![CDATA[<h2 id="OSGEarth的安装"><a href="#OSGEarth的安装" class="headerlink" title="OSGEarth的安装"></a>OSGEarth的安装</h2><p>根据能查到的博客及相关教程，分两大类方法。</p>
 <ol>
 <li>CMake 编译方法</li>
 <li>vcpkg 安装方法</li>

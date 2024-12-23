@@ -71,4 +71,34 @@
 </ol>
 ]]></content>
   </entry>
+  <entry>
+    <title>HDBSCAN</title>
+    <url>/2024/12/11/HDBSCAN/</url>
+    <content><![CDATA[<h2 id="1-HDBSCAN算法简介"><a href="#1-HDBSCAN算法简介" class="headerlink" title="1.HDBSCAN算法简介"></a>1.HDBSCAN算法简介</h2><p>HDBSCAN(Hierarchical Density-Based Spatial Clustering of Applications with Noise)是一种高效的密度聚类算法,由Campello、Moulavi和Sander于2013年提出。它是DBSCAN算法的扩展版本,通过将DBSCAN转化为层次聚类算法,并使用基于聚类稳定性的技术来提取平面聚类结果，其实HDBSCAN算法是对OPTICS算法的一种改进。</p>
+<p>HDBSCAN算法优势：</p>
+<ol>
+<li>能够发现任意形状的聚类</li>
+<li>可以处理不同密度的数据分布</li>
+<li>对噪声和异常值具有较强的鲁棒性</li>
+<li>参数调整简单直观</li>
+</ol>
+<ul>
+<li>HDBSCAN算法的具体过程分为一下几步</li>
+</ul>
+<ol>
+<li>空间变换</li>
+<li>构建最小生成树</li>
+<li>构建聚类层次结构</li>
+<li>压缩聚类树</li>
+<li>提取簇</li>
+</ol>
+<h2 id="2-空间变换"><a href="#2-空间变换" class="headerlink" title="2.空间变换"></a>2.空间变换</h2><ul>
+<li><strong>核心距离（core-distance）</strong>：使样本x成为核心点的最小邻域半径称为x的核心距离</li>
+<li><strong>互达距离</strong>：</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>algorithm</tag>
+      </tags>
+  </entry>
 </search>

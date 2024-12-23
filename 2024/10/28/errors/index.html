@@ -111,19 +111,19 @@
 
 
 
-<meta name="description" content="1. osgearth .ttf: file not handled在使用osgearth时，发生错误如下： 1Error reading file C:&#x2F;WINDOWS&#x2F;fonts\CascadiaCode.ttf: file not handled  经查阅可知，osg的读写字体文件的插件dll找不到了。解决方法  添加环境变量在系统环境变量中添加osg 的path路径 添加配置文件在每个os">
+<meta name="description" content="1. osgearth .ttf: file not handled在使用osgearth时，发生错误如下： 1Error reading file C:&#x2F;WINDOWS&#x2F;fonts\CascadiaCode.ttf: file not handled 经查阅可知，osg的读写字体文件的插件dll找不到了。解决方法  添加环境变量在系统环境变量中添加osg 的path路径 添加配置文件在每个osg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="问题记录">
 <meta property="og:url" content="https://zhangshuaizhang.github.io/2024/10/28/errors/index.html">
 <meta property="og:site_name" content="Zhang&#39;s Blog">
-<meta property="og:description" content="1. osgearth .ttf: file not handled在使用osgearth时，发生错误如下： 1Error reading file C:&#x2F;WINDOWS&#x2F;fonts\CascadiaCode.ttf: file not handled  经查阅可知，osg的读写字体文件的插件dll找不到了。解决方法  添加环境变量在系统环境变量中添加osg 的path路径 添加配置文件在每个os">
+<meta property="og:description" content="1. osgearth .ttf: file not handled在使用osgearth时，发生错误如下： 1Error reading file C:&#x2F;WINDOWS&#x2F;fonts\CascadiaCode.ttf: file not handled 经查阅可知，osg的读写字体文件的插件dll找不到了。解决方法  添加环境变量在系统环境变量中添加osg 的path路径 添加配置文件在每个osg">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zhangshuaizhang.github.io/images/errorConf.png">
+<meta property="og:image" content="https://zhangshuaizhang.github.io/2024/10/28/images/errorConf.png">
 <meta property="article:published_time" content="2024-10-28T02:40:53.000Z">
 <meta property="article:modified_time" content="2024-10-28T08:53:15.000Z">
 <meta property="article:author" content="Zhang Shuaizhang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zhangshuaizhang.github.io/images/errorConf.png">
+<meta name="twitter:image" content="https://zhangshuaizhang.github.io/2024/10/28/images/errorConf.png">
 
 
 
@@ -424,11 +424,10 @@
       
         <h2 id="1-osgearth-ttf-file-not-handled"><a href="#1-osgearth-ttf-file-not-handled" class="headerlink" title="1. osgearth .ttf: file not handled"></a>1. osgearth .ttf: file not handled</h2><p>在使用osgearth时，发生错误如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Error</span> reading file <span class="attr">C</span>:<span class="regexp">/WINDOWS/</span>fonts\<span class="title class_">CascadiaCode</span>.<span class="property">ttf</span>: file not handled</span><br></pre></td></tr></table></figure>
-
 <p>经查阅可知，osg的读写字体文件的插件dll找不到了。<br><strong>解决方法</strong></p>
 <ol>
 <li>添加环境变量<br>在系统环境变量中添加osg 的path路径</li>
-<li>添加配置文件<br>在每个osg工程中配置osg头文件lib和dll以及plugins<br><img src="/../images/errorConf.png" alt="t"></li>
+<li>添加配置文件<br>在每个osg工程中配置osg头文件lib和dll以及plugins<br><img src="../images/errorConf.png" alt="t"></li>
 </ol>
 
       
@@ -1145,6 +1144,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src=""></script>
+  
+
 
   
 

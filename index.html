@@ -165,7 +165,119 @@
 
 
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -391,7 +503,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.1k
+                  2k
                 </span>
               
 
@@ -419,17 +531,14 @@
         
           
           1.HDBSCAN算法简介DBSCAN(Hierarchical Density-Based Spatial Clustering of Applications with Noise)是一种高效的密度聚类算法,由Campello、Moulavi和Sander于2013年提出。它是DBSCAN算法的扩展版本,通过将DBSCAN转化为层次聚类算法,并使用基于聚类稳定性的技术来提取平面聚类结果，其实HDBSCAN算法是对OPTICS算法的一种改进。
-
 HDBSCAN算法优势：
-
 
 能够发现任意形状的聚类
 可以处理不同密度的数据分布
 对噪声和异常值具有较强的鲁棒性
 参数调整简单直观
 
-
-HDBSCA
+HDBSCAN算法
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -576,7 +685,6 @@ HDBSCA
           
           1. osgearth .ttf: file not handled在使用osgearth时，发生错误如下：
 1Error reading file C:/WINDOWS/fonts\CascadiaCode.ttf: file not handled
-
 经查阅可知，osg的读写字体文件的插件dll找不到了。解决方法
 
 添加环境变量在系统环境变量中添加osg 的path路径
@@ -757,9 +865,8 @@ vcpkg 安装方法
 笔者在使用CMake编译方法遇到了大量的问题，使用VS编译时因为第三方库的问题，始终未能成功实现编译。在花费大量的时间后，转头使用vcpkg方法完成OSGEarth及其依赖项的安装。故在此进行记录安装过程，方便后续使用。
 1. 安装vcpkg首先，下载vcpkg并执行 bootstrap.bat 脚本。
 12git clone https://github.com/microsoft/vcpkg.\vcpkg\bootstrap-vcpkg.bat
-
 vcpkg 的安装命令
-1&g
+1&gt
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1429,6 +1536,28 @@ vcpkg 的安装命令
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src=""></script>
+  
+
 
   
 

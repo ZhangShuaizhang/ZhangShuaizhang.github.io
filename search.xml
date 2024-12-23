@@ -87,7 +87,7 @@
 </ul>
 <p>$$<br>d_{mreach − k} ( a ,  b ) &#x3D; max { core_k(a),core_k(b),d(a,b)}<br>$$</p>
 <p><strong>在这个度量下，密集点（具有低核心距离）之间的距离保持不变，但稀疏的点与其他点的距离被拉远到用core距离来计算。</strong></p>
-<p><img src="/HDBSCAN1.png" alt="ima"></p>
+<p><img src="/HDBSCAN1.png" alt="../images/HDBSCAN1.png"></p>
 <p>蓝点和绿点的互达距离，就是绿点的核心距离（绿线）</p>
 <p><img src="/HDBSCAN2.png" alt="../images/HDBSCAN2.png"></p>
 <p>红点和绿点的互达距离，就是他们两个点之间的距离（黄线）</p>
@@ -143,8 +143,7 @@
 </li>
 <li>现在我们将每个 <strong>节点的稳定性</strong> 定义为：</li>
 </ul>
-<p>  $$<br>   s_{c l u s t e r}  &#x3D;   \sum\limits_{p \in \text{cluster}} (\lambda_p - \lambda_{\text{death}})</p>
-<p>  $$</p>
+<p>  $$<br>   s_{c l u s t e r}  &#x3D;   \sum\limits_{p \in \text{cluster}} (\lambda_p - \lambda_{\text{death}})<br>  $$</p>
 <p>  稳定性越大说明该节点中的散点越少。hdbscan需要找到最大$\sum\limits_{p \in \text{cluster}} (\lambda_p - \lambda_{\text{death}})$的分裂簇方法，同时需要满足最小簇类大小。</p>
 </li>
 </ul>
